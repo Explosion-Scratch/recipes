@@ -1,5 +1,8 @@
 <script>
-  let page = "home";
+  import { onMount } from "svelte";
+
+  let page = "home",
+    title = "Recipies";
   let inputVal = "",
     img;
   let recipe = {};
@@ -7,20 +10,47 @@
   $: disabled = !inputVal.match(
     /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
   );
-  async function load() {
-    if (disabled) {
+  onMount(() => {
+    if (new URLSearchParams(location.search).get("url")) {
+      load(null, new URLSearchParams(location.search).get("url"), true);
+    }
+    document.querySelector("input").onpaste = async () => {
+      await new Promise((r) => setTimeout(r, 10));
+      console.log("Pasted");
+      load(null, null, true);
+    };
+  });
+  async function load(_, url, bypass = false) {
+    console.log("Loading recipe");
+    if (disabled && !bypass) {
       return;
+    }
+    if (
+      !(url || inputVal).match(
+        /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
+      )
+    ) {
+      return alert("Invalid URL");
     }
     page = "loading";
     recipe = await fetch(
       `https://cors.explosionscratc.repl.co/www.justtherecipe.com/extractRecipeAtUrl?url=${encodeURIComponent(
-        inputVal
+        url || inputVal
       )}`
     ).then((r) => r.json());
+    history.pushState(
+      {},
+      title,
+      `${location.pathname || ""}?url=${url || inputVal}`
+    );
+    title = recipe.name;
     page = "recipe";
   }
 </script>
 
+<svelte:head>
+  <title>{title}</title>
+</svelte:head>
 {#if page === "home"}
   <input
     spellcheck="false"
@@ -301,6 +331,9 @@
   @media print {
     * {
       box-shadow: none !important;
+    }
+    #home {
+      display: none;
     }
   }
   .loader {
