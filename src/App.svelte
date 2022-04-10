@@ -11,7 +11,38 @@
   $: disabled = !inputVal.match(
     /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
   );
-  $: (async () => {
+  onMount(() => {
+    if (new URLSearchParams(location.search).get("url")) {
+      load(null, new URLSearchParams(location.search).get("url"), true);
+    }
+    document.querySelector("input").onpaste = async () => {
+      await new Promise((r) => setTimeout(r, 10));
+      console.log("Pasted");
+      load(null, null, true);
+    };
+    window.onafterprint = () => ((printing = false), updateHistory());
+    window.onbeforeprint = async () => {
+      printing = true;
+      if (
+        !recipe.sourceUrl ||
+        shortUrl ||
+        recipe.sourceUrl.includes("//is.gd")
+      ) {
+        return;
+      }
+      shortUrl = await fetch(
+        `https://cors.explosionscratc.repl.co/is.gd/create.php?format=simple&url=${encodeURIComponent(
+          recipe.sourceUrl
+        )}`
+      ).then((r) => r.text());
+      if (!shortUrl.startsWith("http")) {
+        updateHistory();
+        return (shortUrl = null);
+      }
+      updateHistory();
+    };
+  });
+  async function updateHistory() {
     if (printing) {
       return;
     }
@@ -29,36 +60,7 @@
         inputVal
       }`
     );
-  })();
-  onMount(() => {
-    if (new URLSearchParams(location.search).get("url")) {
-      load(null, new URLSearchParams(location.search).get("url"), true);
-    }
-    document.querySelector("input").onpaste = async () => {
-      await new Promise((r) => setTimeout(r, 10));
-      console.log("Pasted");
-      load(null, null, true);
-    };
-    window.onafterprint = () => (printing = false);
-    window.onbeforeprint = async () => {
-      printing = true;
-      if (
-        !recipe.sourceUrl ||
-        shortUrl ||
-        recipe.sourceUrl.includes("//is.gd")
-      ) {
-        return;
-      }
-      shortUrl = await fetch(
-        `https://cors.explosionscratc.repl.co/is.gd/create.php?format=simple&url=${encodeURIComponent(
-          recipe.sourceUrl
-        )}`
-      ).then((r) => r.text());
-      if (!shortUrl.startsWith("http")) {
-        return (shortUrl = null);
-      }
-    };
-  });
+  }
   async function load(_, url, bypass = false) {
     console.log("Loading recipe");
     if (disabled && !bypass) {
@@ -85,11 +87,12 @@
     if (!res.ok) {
       prompt("There was an error", (await res.text()) || res.status);
       page = "home";
-      return;
+      return updateHistory();
     }
     recipe = await res.json();
     title = recipe.name;
     page = "recipe";
+    updateHistory();
   }
 </script>
 
