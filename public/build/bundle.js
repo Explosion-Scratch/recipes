@@ -412,25 +412,25 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[12] = list[i];
+    	child_ctx[13] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[15] = list[i];
+    	child_ctx[16] = list[i];
     	return child_ctx;
     }
 
-    // (210:29) 
+    // (237:29) 
     function create_if_block_3(ctx) {
     	let span;
 
     	const block = {
     		c: function create() {
     			span = element("span");
-    			attr_dev(span, "class", "loader svelte-1s2k6xt");
-    			add_location(span, file, 210, 2, 7941);
+    			attr_dev(span, "class", "loader svelte-f48tzt");
+    			add_location(span, file, 237, 2, 8707);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -445,16 +445,16 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(210:29) ",
+    		source: "(237:29) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (63:28) 
+    // (80:28) 
     function create_if_block_1(ctx) {
-    	let div4;
+    	let div5;
     	let div0;
     	let svg0;
     	let path0;
@@ -470,44 +470,59 @@ var app = (function () {
     	let t3;
     	let ul;
     	let t4;
-    	let div3;
+    	let div4;
     	let h21;
     	let a;
-    	let t5_value = /*recipe*/ ctx[4].name + "";
+    	let t5_value = /*recipe*/ ctx[5].name + "";
     	let t5;
     	let a_href_value;
     	let t6;
     	let div2;
-    	let svg2;
-    	let path4;
     	let t7;
-    	let t8_value = /*recipe*/ ctx[4].servings + "";
+    	let span;
+    	let t8_value = (/*shortUrl*/ ctx[3] || /*recipe*/ ctx[5].sourceUrl.split("//")[1]) + "";
     	let t8;
     	let t9;
+
+    	let t10_value = new Date().toLocaleDateString("en-US", {
+    		month: "long",
+    		day: "numeric",
+    		year: "numeric"
+    	}) + "";
+
+    	let t10;
+    	let t11;
+    	let div3;
+    	let svg2;
+    	let path4;
+    	let t12;
+    	let t13_value = /*recipe*/ ctx[5].servings + "";
+    	let t13;
+    	let t14;
     	let svg3;
     	let path5;
-    	let t10;
-    	let t11_value = /*recipe*/ ctx[4].cookTime / 60 / 1000000 + "";
-    	let t11;
-    	let t12;
-    	let t13;
+    	let t15;
+    	let t16_value = /*recipe*/ ctx[5].cookTime / 60 / 1000000 + "";
+    	let t16;
+    	let t17;
+    	let t18;
     	let h22;
     	let svg4;
     	let path6;
-    	let t14;
-    	let t15;
+    	let t19;
+    	let t20;
     	let ol;
     	let mounted;
     	let dispose;
 
     	function select_block_type_1(ctx, dirty) {
-    		if (/*recipe*/ ctx[4].imageUrls[0]) return create_if_block_2;
+    		if (/*recipe*/ ctx[5].imageUrls[0]) return create_if_block_2;
     		return create_else_block;
     	}
 
     	let current_block_type = select_block_type_1(ctx);
     	let if_block = current_block_type(ctx);
-    	let each_value_1 = /*recipe*/ ctx[4].ingredients;
+    	let each_value_1 = /*recipe*/ ctx[5].ingredients;
     	validate_each_argument(each_value_1);
     	let each_blocks_1 = [];
 
@@ -515,7 +530,7 @@ var app = (function () {
     		each_blocks_1[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
     	}
 
-    	let each_value = /*recipe*/ ctx[4].instructions;
+    	let each_value = /*recipe*/ ctx[5].instructions;
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -525,7 +540,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div4 = element("div");
+    			div5 = element("div");
     			div0 = element("div");
     			svg0 = svg_element("svg");
     			path0 = svg_element("path");
@@ -547,28 +562,35 @@ var app = (function () {
     			}
 
     			t4 = space();
-    			div3 = element("div");
+    			div4 = element("div");
     			h21 = element("h2");
     			a = element("a");
     			t5 = text(t5_value);
     			t6 = space();
     			div2 = element("div");
+    			t7 = text("Saved from ");
+    			span = element("span");
+    			t8 = text(t8_value);
+    			t9 = text("\n        • ");
+    			t10 = text(t10_value);
+    			t11 = space();
+    			div3 = element("div");
     			svg2 = svg_element("svg");
     			path4 = svg_element("path");
-    			t7 = space();
-    			t8 = text(t8_value);
-    			t9 = text(" servings •\n        ");
+    			t12 = space();
+    			t13 = text(t13_value);
+    			t14 = text(" servings •\n        ");
     			svg3 = svg_element("svg");
     			path5 = svg_element("path");
-    			t10 = space();
-    			t11 = text(t11_value);
-    			t12 = text(" minutes");
-    			t13 = space();
+    			t15 = space();
+    			t16 = text(t16_value);
+    			t17 = text(" minutes");
+    			t18 = space();
     			h22 = element("h2");
     			svg4 = svg_element("svg");
     			path6 = svg_element("path");
-    			t14 = text("\n        Steps");
-    			t15 = space();
+    			t19 = text("\n        Steps");
+    			t20 = space();
     			ol = element("ol");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -577,119 +599,125 @@ var app = (function () {
 
     			attr_dev(path0, "fill", "currentColor");
     			attr_dev(path0, "d", "m33.71 17.29l-15-15a1 1 0 0 0-1.41 0l-15 15a1 1 0 0 0 1.41 1.41L18 4.41l14.29 14.3a1 1 0 0 0 1.41-1.41Z");
-    			attr_dev(path0, "class", "clr-i-outline clr-i-outline-path-1 svelte-1s2k6xt");
-    			add_location(path0, file, 75, 9, 2075);
+    			attr_dev(path0, "class", "clr-i-outline clr-i-outline-path-1 svelte-f48tzt");
+    			add_location(path0, file, 92, 9, 2553);
     			attr_dev(path1, "fill", "currentColor");
     			attr_dev(path1, "d", "M28 32h-5V22H13v10H8V18l-2 2v12a2 2 0 0 0 2 2h7V24h6v10h7a2 2 0 0 0 2-2V19.76l-2-2Z");
-    			attr_dev(path1, "class", "clr-i-outline clr-i-outline-path-2 svelte-1s2k6xt");
-    			add_location(path1, file, 79, 10, 2292);
+    			attr_dev(path1, "class", "clr-i-outline clr-i-outline-path-2 svelte-f48tzt");
+    			add_location(path1, file, 96, 10, 2770);
     			attr_dev(path2, "fill", "none");
     			attr_dev(path2, "d", "M0 0h36v36H0z");
-    			attr_dev(path2, "class", "svelte-1s2k6xt");
-    			add_location(path2, file, 83, 10, 2489);
+    			attr_dev(path2, "class", "svelte-f48tzt");
+    			add_location(path2, file, 100, 10, 2967);
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg0, "xmlns:xlink", "http://www.w3.org/1999/xlink");
     			attr_dev(svg0, "aria-hidden", "true");
     			attr_dev(svg0, "role", "img");
-    			attr_dev(svg0, "class", "iconify iconify--clarity svelte-1s2k6xt");
+    			attr_dev(svg0, "class", "iconify iconify--clarity svelte-f48tzt");
     			attr_dev(svg0, "width", "32");
     			attr_dev(svg0, "height", "32");
     			attr_dev(svg0, "preserveAspectRatio", "xMidYMid meet");
     			attr_dev(svg0, "viewBox", "0 0 36 36");
-    			add_location(svg0, file, 65, 6, 1769);
+    			add_location(svg0, file, 82, 6, 2247);
     			attr_dev(div0, "id", "home");
-    			attr_dev(div0, "class", "svelte-1s2k6xt");
-    			add_location(div0, file, 64, 4, 1714);
+    			attr_dev(div0, "class", "svelte-f48tzt");
+    			add_location(div0, file, 81, 4, 2192);
     			attr_dev(path3, "fill", "currentColor");
     			attr_dev(path3, "d", "M78 72V32a6 6 0 0 1 12 0v40a6 6 0 0 1-12 0Zm39.9-41a6 6 0 0 0-11.8 2l7.9 47.5a30 30 0 0 1-60 0L61.9 33a6 6 0 1 0-11.8-2l-8 48a3.4 3.4 0 0 0-.1 1a42.2 42.2 0 0 0 36 41.6V224a6 6 0 0 0 12 0V121.6A42.2 42.2 0 0 0 126 80a3.4 3.4 0 0 0-.1-1Zm92.1 1v192a6 6 0 0 1-12 0v-58h-50a6.1 6.1 0 0 1-4.5-2a6.4 6.4 0 0 1-1.5-4.6a412.4 412.4 0 0 1 11.7-59c11.9-41.8 28.1-66.7 48.2-74A6 6 0 0 1 210 32Zm-12 10.1c-25.7 19.4-39.1 81.1-43.2 111.9H198Z");
-    			attr_dev(path3, "class", "svelte-1s2k6xt");
-    			add_location(path3, file, 130, 11, 4253);
+    			attr_dev(path3, "class", "svelte-f48tzt");
+    			add_location(path3, file, 147, 11, 4731);
     			attr_dev(svg1, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg1, "xmlns:xlink", "http://www.w3.org/1999/xlink");
     			attr_dev(svg1, "aria-hidden", "true");
     			attr_dev(svg1, "role", "img");
-    			attr_dev(svg1, "class", "iconify iconify--ph svelte-1s2k6xt");
+    			attr_dev(svg1, "class", "iconify iconify--ph svelte-f48tzt");
     			attr_dev(svg1, "width", "32");
     			attr_dev(svg1, "height", "32");
     			attr_dev(svg1, "preserveAspectRatio", "xMidYMid meet");
     			attr_dev(svg1, "viewBox", "0 0 256 256");
-    			add_location(svg1, file, 120, 8, 3930);
-    			attr_dev(h20, "class", "ingredientsHeader svelte-1s2k6xt");
-    			add_location(h20, file, 119, 6, 3891);
+    			add_location(svg1, file, 137, 8, 4408);
+    			attr_dev(h20, "class", "ingredientsHeader svelte-f48tzt");
+    			add_location(h20, file, 136, 6, 4369);
     			attr_dev(ul, "id", "ingredients");
-    			attr_dev(ul, "class", "svelte-1s2k6xt");
-    			add_location(ul, file, 137, 6, 4804);
-    			attr_dev(div1, "class", "column imageColumn svelte-1s2k6xt");
-    			add_location(div1, file, 86, 4, 2556);
-    			attr_dev(a, "href", a_href_value = /*recipe*/ ctx[4].sourceUrl);
-    			attr_dev(a, "class", "svelte-1s2k6xt");
-    			add_location(a, file, 146, 24, 5056);
-    			attr_dev(h21, "class", "title svelte-1s2k6xt");
-    			add_location(h21, file, 146, 6, 5038);
+    			attr_dev(ul, "class", "svelte-f48tzt");
+    			add_location(ul, file, 154, 6, 5282);
+    			attr_dev(div1, "class", "column imageColumn svelte-f48tzt");
+    			add_location(div1, file, 103, 4, 3034);
+    			attr_dev(a, "href", a_href_value = /*recipe*/ ctx[5].sourceUrl);
+    			attr_dev(a, "class", "svelte-f48tzt");
+    			add_location(a, file, 163, 24, 5534);
+    			attr_dev(h21, "class", "title svelte-f48tzt");
+    			add_location(h21, file, 163, 6, 5516);
+    			attr_dev(span, "id", "url_link");
+    			attr_dev(span, "class", "svelte-f48tzt");
+    			add_location(span, file, 165, 19, 5624);
+    			attr_dev(div2, "id", "url");
+    			attr_dev(div2, "class", "svelte-f48tzt");
+    			add_location(div2, file, 164, 6, 5590);
     			attr_dev(path4, "fill", "currentColor");
     			attr_dev(path4, "d", "M237.6 78.9a13.9 13.9 0 0 0-3.7-18.9a181.9 181.9 0 0 0-211.8 0a13.9 13.9 0 0 0-3.7 18.9l97.8 153.7a14 14 0 0 0 23.6 0l58.4-91.8h.1ZM29.1 69.7a170.1 170.1 0 0 1 197.8 0a2.1 2.1 0 0 1 .6 2.8l-9.8 15.3a149.9 149.9 0 0 0-179.4 0l-9.8-15.3a2.1 2.1 0 0 1 .6-2.8Zm35.6 59.7a22 22 0 1 1 20.7 32.5Zm65 96.8a2.1 2.1 0 0 1-3.4 0l-33.9-53.3a34 34 0 1 0-34.7-54.5L44.7 98a137.9 137.9 0 0 1 166.6 0l-19.4 30.4a34 34 0 1 0-36.5 57.3Zm32.2-50.7A22 22 0 0 1 172 134a21.5 21.5 0 0 1 13.4 4.6Z");
-    			attr_dev(path4, "class", "svelte-1s2k6xt");
-    			add_location(path4, file, 158, 11, 5462);
+    			attr_dev(path4, "class", "svelte-f48tzt");
+    			add_location(path4, file, 185, 11, 6228);
     			attr_dev(svg2, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg2, "xmlns:xlink", "http://www.w3.org/1999/xlink");
     			attr_dev(svg2, "aria-hidden", "true");
     			attr_dev(svg2, "role", "img");
-    			attr_dev(svg2, "class", "iconify iconify--ph svelte-1s2k6xt");
+    			attr_dev(svg2, "class", "iconify iconify--ph svelte-f48tzt");
     			attr_dev(svg2, "width", "32");
     			attr_dev(svg2, "height", "32");
     			attr_dev(svg2, "preserveAspectRatio", "xMidYMid meet");
     			attr_dev(svg2, "viewBox", "0 0 256 256");
-    			add_location(svg2, file, 148, 8, 5139);
+    			add_location(svg2, file, 175, 8, 5905);
     			attr_dev(path5, "fill", "currentColor");
     			attr_dev(path5, "d", "M128 230a102 102 0 1 1 102-102a102.2 102.2 0 0 1-102 102Zm0-192a90 90 0 1 0 90 90a90.1 90.1 0 0 0-90-90Zm62 90a6 6 0 0 0-6-6h-50V72a6 6 0 0 0-12 0v56a6 6 0 0 0 6 6h56a6 6 0 0 0 6-6Z");
-    			attr_dev(path5, "class", "svelte-1s2k6xt");
-    			add_location(path5, file, 174, 11, 6387);
+    			attr_dev(path5, "class", "svelte-f48tzt");
+    			add_location(path5, file, 201, 11, 7153);
     			attr_dev(svg3, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg3, "xmlns:xlink", "http://www.w3.org/1999/xlink");
     			attr_dev(svg3, "aria-hidden", "true");
     			attr_dev(svg3, "role", "img");
-    			attr_dev(svg3, "class", "iconify iconify--ph svelte-1s2k6xt");
+    			attr_dev(svg3, "class", "iconify iconify--ph svelte-f48tzt");
     			attr_dev(svg3, "width", "32");
     			attr_dev(svg3, "height", "32");
     			attr_dev(svg3, "preserveAspectRatio", "xMidYMid meet");
     			attr_dev(svg3, "viewBox", "0 0 256 256");
-    			add_location(svg3, file, 164, 8, 6064);
-    			attr_dev(div2, "id", "details");
-    			attr_dev(div2, "class", "svelte-1s2k6xt");
-    			add_location(div2, file, 147, 6, 5112);
+    			add_location(svg3, file, 191, 8, 6830);
+    			attr_dev(div3, "id", "details");
+    			attr_dev(div3, "class", "svelte-f48tzt");
+    			add_location(div3, file, 174, 6, 5878);
     			attr_dev(path6, "fill", "currentColor");
     			attr_dev(path6, "d", "M222 128a6 6 0 0 1-6 6h-88a6 6 0 0 1 0-12h88a6 6 0 0 1 6 6Zm-94-58h88a6 6 0 0 0 0-12h-88a6 6 0 0 0 0 12Zm88 116h-88a6 6 0 0 0 0 12h88a6 6 0 0 0 0-12ZM87.9 43.6L57.3 71.8L44.1 59.6a6 6 0 0 0-8.2 8.8l17.4 16a5.7 5.7 0 0 0 4 1.6a5.7 5.7 0 0 0 4.1-1.6l34.7-32a6 6 0 1 0-8.2-8.8Zm0 64l-30.6 28.2l-13.2-12.2a6 6 0 0 0-8.2 8.8l17.4 16a5.7 5.7 0 0 0 4 1.6a5.7 5.7 0 0 0 4.1-1.6l34.7-32a6 6 0 1 0-8.2-8.8Zm0 64l-30.6 28.2l-13.2-12.2a6 6 0 0 0-8.2 8.8l17.4 16a5.7 5.7 0 0 0 4 1.6a5.7 5.7 0 0 0 4.1-1.6l34.7-32a6 6 0 1 0-8.2-8.8Z");
-    			attr_dev(path6, "class", "svelte-1s2k6xt");
-    			add_location(path6, file, 193, 11, 7071);
+    			attr_dev(path6, "class", "svelte-f48tzt");
+    			add_location(path6, file, 220, 11, 7837);
     			attr_dev(svg4, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg4, "xmlns:xlink", "http://www.w3.org/1999/xlink");
     			attr_dev(svg4, "aria-hidden", "true");
     			attr_dev(svg4, "role", "img");
-    			attr_dev(svg4, "class", "iconify iconify--ph svelte-1s2k6xt");
+    			attr_dev(svg4, "class", "iconify iconify--ph svelte-f48tzt");
     			attr_dev(svg4, "width", "32");
     			attr_dev(svg4, "height", "32");
     			attr_dev(svg4, "preserveAspectRatio", "xMidYMid meet");
     			attr_dev(svg4, "viewBox", "0 0 256 256");
-    			add_location(svg4, file, 183, 8, 6748);
-    			attr_dev(h22, "class", "recipe svelte-1s2k6xt");
-    			add_location(h22, file, 182, 6, 6720);
+    			add_location(svg4, file, 210, 8, 7514);
+    			attr_dev(h22, "class", "recipe svelte-f48tzt");
+    			add_location(h22, file, 209, 6, 7486);
     			attr_dev(ol, "id", "steps");
-    			attr_dev(ol, "class", "svelte-1s2k6xt");
-    			add_location(ol, file, 200, 6, 7704);
-    			attr_dev(div3, "class", "column recipeColumn svelte-1s2k6xt");
-    			add_location(div3, file, 145, 4, 4998);
-    			attr_dev(div4, "class", "container svelte-1s2k6xt");
-    			add_location(div4, file, 63, 2, 1686);
+    			attr_dev(ol, "class", "svelte-f48tzt");
+    			add_location(ol, file, 227, 6, 8470);
+    			attr_dev(div4, "class", "column recipeColumn svelte-f48tzt");
+    			add_location(div4, file, 162, 4, 5476);
+    			attr_dev(div5, "class", "container svelte-f48tzt");
+    			add_location(div5, file, 80, 2, 2164);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div4, anchor);
-    			append_dev(div4, div0);
+    			insert_dev(target, div5, anchor);
+    			append_dev(div5, div0);
     			append_dev(div0, svg0);
     			append_dev(svg0, path0);
     			append_dev(svg0, path1);
     			append_dev(svg0, path2);
-    			append_dev(div4, t0);
-    			append_dev(div4, div1);
+    			append_dev(div5, t0);
+    			append_dev(div5, div1);
     			if_block.m(div1, null);
     			append_dev(div1, t1);
     			append_dev(div1, h20);
@@ -703,37 +731,44 @@ var app = (function () {
     				each_blocks_1[i].m(ul, null);
     			}
 
-    			append_dev(div4, t4);
-    			append_dev(div4, div3);
-    			append_dev(div3, h21);
+    			append_dev(div5, t4);
+    			append_dev(div5, div4);
+    			append_dev(div4, h21);
     			append_dev(h21, a);
     			append_dev(a, t5);
-    			append_dev(div3, t6);
-    			append_dev(div3, div2);
-    			append_dev(div2, svg2);
-    			append_dev(svg2, path4);
+    			append_dev(div4, t6);
+    			append_dev(div4, div2);
     			append_dev(div2, t7);
-    			append_dev(div2, t8);
+    			append_dev(div2, span);
+    			append_dev(span, t8);
     			append_dev(div2, t9);
-    			append_dev(div2, svg3);
-    			append_dev(svg3, path5);
     			append_dev(div2, t10);
-    			append_dev(div2, t11);
-    			append_dev(div2, t12);
+    			append_dev(div4, t11);
+    			append_dev(div4, div3);
+    			append_dev(div3, svg2);
+    			append_dev(svg2, path4);
+    			append_dev(div3, t12);
     			append_dev(div3, t13);
-    			append_dev(div3, h22);
+    			append_dev(div3, t14);
+    			append_dev(div3, svg3);
+    			append_dev(svg3, path5);
+    			append_dev(div3, t15);
+    			append_dev(div3, t16);
+    			append_dev(div3, t17);
+    			append_dev(div4, t18);
+    			append_dev(div4, h22);
     			append_dev(h22, svg4);
     			append_dev(svg4, path6);
-    			append_dev(h22, t14);
-    			append_dev(div3, t15);
-    			append_dev(div3, ol);
+    			append_dev(h22, t19);
+    			append_dev(div4, t20);
+    			append_dev(div4, ol);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(ol, null);
     			}
 
     			if (!mounted) {
-    				dispose = listen_dev(div0, "click", /*click_handler*/ ctx[9], false, false, false);
+    				dispose = listen_dev(div0, "click", /*click_handler*/ ctx[10], false, false, false);
     				mounted = true;
     			}
     		},
@@ -750,8 +785,8 @@ var app = (function () {
     				}
     			}
 
-    			if (dirty & /*recipe*/ 16) {
-    				each_value_1 = /*recipe*/ ctx[4].ingredients;
+    			if (dirty & /*recipe*/ 32) {
+    				each_value_1 = /*recipe*/ ctx[5].ingredients;
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -774,17 +809,18 @@ var app = (function () {
     				each_blocks_1.length = each_value_1.length;
     			}
 
-    			if (dirty & /*recipe*/ 16 && t5_value !== (t5_value = /*recipe*/ ctx[4].name + "")) set_data_dev(t5, t5_value);
+    			if (dirty & /*recipe*/ 32 && t5_value !== (t5_value = /*recipe*/ ctx[5].name + "")) set_data_dev(t5, t5_value);
 
-    			if (dirty & /*recipe*/ 16 && a_href_value !== (a_href_value = /*recipe*/ ctx[4].sourceUrl)) {
+    			if (dirty & /*recipe*/ 32 && a_href_value !== (a_href_value = /*recipe*/ ctx[5].sourceUrl)) {
     				attr_dev(a, "href", a_href_value);
     			}
 
-    			if (dirty & /*recipe*/ 16 && t8_value !== (t8_value = /*recipe*/ ctx[4].servings + "")) set_data_dev(t8, t8_value);
-    			if (dirty & /*recipe*/ 16 && t11_value !== (t11_value = /*recipe*/ ctx[4].cookTime / 60 / 1000000 + "")) set_data_dev(t11, t11_value);
+    			if (dirty & /*shortUrl, recipe*/ 40 && t8_value !== (t8_value = (/*shortUrl*/ ctx[3] || /*recipe*/ ctx[5].sourceUrl.split("//")[1]) + "")) set_data_dev(t8, t8_value);
+    			if (dirty & /*recipe*/ 32 && t13_value !== (t13_value = /*recipe*/ ctx[5].servings + "")) set_data_dev(t13, t13_value);
+    			if (dirty & /*recipe*/ 32 && t16_value !== (t16_value = /*recipe*/ ctx[5].cookTime / 60 / 1000000 + "")) set_data_dev(t16, t16_value);
 
-    			if (dirty & /*recipe*/ 16) {
-    				each_value = /*recipe*/ ctx[4].instructions;
+    			if (dirty & /*recipe*/ 32) {
+    				each_value = /*recipe*/ ctx[5].instructions;
     				validate_each_argument(each_value);
     				let i;
 
@@ -808,7 +844,7 @@ var app = (function () {
     			}
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div4);
+    			if (detaching) detach_dev(div5);
     			if_block.d();
     			destroy_each(each_blocks_1, detaching);
     			destroy_each(each_blocks, detaching);
@@ -821,14 +857,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(63:28) ",
+    		source: "(80:28) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (54:0) {#if page === "home"}
+    // (71:0) {#if page === "home"}
     function create_if_block(ctx) {
     	let input;
     	let t0;
@@ -846,11 +882,11 @@ var app = (function () {
     			attr_dev(input, "spellcheck", "false");
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "Enter a recipe URL");
-    			attr_dev(input, "class", "svelte-1s2k6xt");
-    			add_location(input, file, 54, 2, 1442);
-    			button.disabled = /*disabled*/ ctx[5];
-    			attr_dev(button, "class", "svelte-1s2k6xt");
-    			add_location(button, file, 61, 2, 1608);
+    			attr_dev(input, "class", "svelte-f48tzt");
+    			add_location(input, file, 71, 2, 1920);
+    			button.disabled = /*disabled*/ ctx[6];
+    			attr_dev(button, "class", "svelte-f48tzt");
+    			add_location(button, file, 78, 2, 2086);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, input, anchor);
@@ -861,9 +897,9 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input, "input", /*input_input_handler*/ ctx[7]),
-    					listen_dev(input, "keyup", /*keyup_handler*/ ctx[8], false, false, false),
-    					listen_dev(button, "click", /*load*/ ctx[6], false, false, false)
+    					listen_dev(input, "input", /*input_input_handler*/ ctx[8]),
+    					listen_dev(input, "keyup", /*keyup_handler*/ ctx[9], false, false, false),
+    					listen_dev(button, "click", /*load*/ ctx[7], false, false, false)
     				];
 
     				mounted = true;
@@ -874,8 +910,8 @@ var app = (function () {
     				set_input_value(input, /*inputVal*/ ctx[0]);
     			}
 
-    			if (dirty & /*disabled*/ 32) {
-    				prop_dev(button, "disabled", /*disabled*/ ctx[5]);
+    			if (dirty & /*disabled*/ 64) {
+    				prop_dev(button, "disabled", /*disabled*/ ctx[6]);
     			}
     		},
     		d: function destroy(detaching) {
@@ -891,14 +927,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(54:0) {#if page === \\\"home\\\"}",
+    		source: "(71:0) {#if page === \\\"home\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (99:6) {:else}
+    // (116:6) {:else}
     function create_else_block(ctx) {
     	let svg;
     	let path0;
@@ -912,13 +948,13 @@ var app = (function () {
     			attr_dev(path0, "fill", "currentColor");
     			attr_dev(path0, "d", "M40 176V48a8 8 0 0 1 8-8h160a8 8 0 0 1 8 8v112l-42.3-42.3a8 8 0 0 0-11.4 0l-44.6 44.6a8 8 0 0 1-11.4 0l-20.6-20.6a8 8 0 0 0-11.4 0Z");
     			attr_dev(path0, "opacity", ".2");
-    			attr_dev(path0, "class", "svelte-1s2k6xt");
-    			add_location(path0, file, 109, 11, 3253);
+    			attr_dev(path0, "class", "svelte-f48tzt");
+    			add_location(path0, file, 126, 11, 3731);
     			attr_dev(path1, "fill", "currentColor");
     			attr_dev(path1, "d", "M88 92a12 12 0 1 1 12 12a12 12 0 0 1-12-12Zm136-44v160a16 16 0 0 1-16 16H48a16 16 0 0 1-16-16V48a16 16 0 0 1 16-16h160a16 16 0 0 1 16 16ZM48 156.7L68.7 136a16.1 16.1 0 0 1 22.6 0l20.7 20.7l44.7-44.7a16.1 16.1 0 0 1 22.6 0l28.7 28.7V48H48ZM208 208v-44.7l-40-40l-44.7 44.7a16.1 16.1 0 0 1-22.6 0L80 147.3l-32 32V208Z");
-    			attr_dev(path1, "class", "svelte-1s2k6xt");
-    			add_location(path1, file, 113, 12, 3476);
-    			attr_dev(svg, "class", "noImage svelte-1s2k6xt");
+    			attr_dev(path1, "class", "svelte-f48tzt");
+    			add_location(path1, file, 130, 12, 3954);
+    			attr_dev(svg, "class", "noImage svelte-f48tzt");
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "xmlns:xlink", "http://www.w3.org/1999/xlink");
     			attr_dev(svg, "aria-hidden", "true");
@@ -927,7 +963,7 @@ var app = (function () {
     			attr_dev(svg, "height", "32");
     			attr_dev(svg, "preserveAspectRatio", "xMidYMid meet");
     			attr_dev(svg, "viewBox", "0 0 256 256");
-    			add_location(svg, file, 99, 8, 2942);
+    			add_location(svg, file, 116, 8, 3420);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, svg, anchor);
@@ -944,14 +980,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(99:6) {:else}",
+    		source: "(116:6) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (88:6) {#if recipe.imageUrls[0]}
+    // (105:6) {#if recipe.imageUrls[0]}
     function create_if_block_2(ctx) {
     	let img_1;
     	let img_1_alt_value;
@@ -962,32 +998,32 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			img_1 = element("img");
-    			attr_dev(img_1, "alt", img_1_alt_value = /*recipe*/ ctx[4].name + " image");
-    			attr_dev(img_1, "class", "recipeImage svelte-1s2k6xt");
-    			if (!src_url_equal(img_1.src, img_1_src_value = /*recipe*/ ctx[4].imageUrls[0])) attr_dev(img_1, "src", img_1_src_value);
-    			add_location(img_1, file, 88, 8, 2629);
+    			attr_dev(img_1, "alt", img_1_alt_value = /*recipe*/ ctx[5].name + " image");
+    			attr_dev(img_1, "class", "recipeImage svelte-f48tzt");
+    			if (!src_url_equal(img_1.src, img_1_src_value = /*recipe*/ ctx[5].imageUrls[0])) attr_dev(img_1, "src", img_1_src_value);
+    			add_location(img_1, file, 105, 8, 3107);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, img_1, anchor);
-    			/*img_1_binding*/ ctx[10](img_1);
+    			/*img_1_binding*/ ctx[11](img_1);
 
     			if (!mounted) {
-    				dispose = listen_dev(img_1, "error", /*error_handler*/ ctx[11], false, false, false);
+    				dispose = listen_dev(img_1, "error", /*error_handler*/ ctx[12], false, false, false);
     				mounted = true;
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*recipe*/ 16 && img_1_alt_value !== (img_1_alt_value = /*recipe*/ ctx[4].name + " image")) {
+    			if (dirty & /*recipe*/ 32 && img_1_alt_value !== (img_1_alt_value = /*recipe*/ ctx[5].name + " image")) {
     				attr_dev(img_1, "alt", img_1_alt_value);
     			}
 
-    			if (dirty & /*recipe*/ 16 && !src_url_equal(img_1.src, img_1_src_value = /*recipe*/ ctx[4].imageUrls[0])) {
+    			if (dirty & /*recipe*/ 32 && !src_url_equal(img_1.src, img_1_src_value = /*recipe*/ ctx[5].imageUrls[0])) {
     				attr_dev(img_1, "src", img_1_src_value);
     			}
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(img_1);
-    			/*img_1_binding*/ ctx[10](null);
+    			/*img_1_binding*/ ctx[11](null);
     			mounted = false;
     			dispose();
     		}
@@ -997,17 +1033,17 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(88:6) {#if recipe.imageUrls[0]}",
+    		source: "(105:6) {#if recipe.imageUrls[0]}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (139:8) {#each recipe.ingredients as ingredient}
+    // (156:8) {#each recipe.ingredients as ingredient}
     function create_each_block_1(ctx) {
     	let li;
-    	let t0_value = /*ingredient*/ ctx[15].name + "";
+    	let t0_value = /*ingredient*/ ctx[16].name + "";
     	let t0;
     	let t1;
 
@@ -1016,8 +1052,8 @@ var app = (function () {
     			li = element("li");
     			t0 = text(t0_value);
     			t1 = space();
-    			attr_dev(li, "class", "ingredient svelte-1s2k6xt");
-    			add_location(li, file, 139, 10, 4885);
+    			attr_dev(li, "class", "ingredient svelte-f48tzt");
+    			add_location(li, file, 156, 10, 5363);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -1025,7 +1061,7 @@ var app = (function () {
     			append_dev(li, t1);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*recipe*/ 16 && t0_value !== (t0_value = /*ingredient*/ ctx[15].name + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*recipe*/ 32 && t0_value !== (t0_value = /*ingredient*/ ctx[16].name + "")) set_data_dev(t0, t0_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(li);
@@ -1036,17 +1072,17 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(139:8) {#each recipe.ingredients as ingredient}",
+    		source: "(156:8) {#each recipe.ingredients as ingredient}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (202:8) {#each recipe.instructions as step}
+    // (229:8) {#each recipe.instructions as step}
     function create_each_block(ctx) {
     	let li;
-    	let t0_value = /*step*/ ctx[12].text + "";
+    	let t0_value = /*step*/ ctx[13].text + "";
     	let t0;
     	let t1;
     	let li_class_value;
@@ -1056,8 +1092,8 @@ var app = (function () {
     			li = element("li");
     			t0 = text(t0_value);
     			t1 = space();
-    			attr_dev(li, "class", li_class_value = "" + (null_to_empty(/*step*/ ctx[12].isOptional ? "optional" : "") + " svelte-1s2k6xt"));
-    			add_location(li, file, 202, 10, 7774);
+    			attr_dev(li, "class", li_class_value = "" + (null_to_empty(/*step*/ ctx[13].isOptional ? "optional" : "") + " svelte-f48tzt"));
+    			add_location(li, file, 229, 10, 8540);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -1065,9 +1101,9 @@ var app = (function () {
     			append_dev(li, t1);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*recipe*/ 16 && t0_value !== (t0_value = /*step*/ ctx[12].text + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*recipe*/ 32 && t0_value !== (t0_value = /*step*/ ctx[13].text + "")) set_data_dev(t0, t0_value);
 
-    			if (dirty & /*recipe*/ 16 && li_class_value !== (li_class_value = "" + (null_to_empty(/*step*/ ctx[12].isOptional ? "optional" : "") + " svelte-1s2k6xt"))) {
+    			if (dirty & /*recipe*/ 32 && li_class_value !== (li_class_value = "" + (null_to_empty(/*step*/ ctx[13].isOptional ? "optional" : "") + " svelte-f48tzt"))) {
     				attr_dev(li, "class", li_class_value);
     			}
     		},
@@ -1080,7 +1116,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(202:8) {#each recipe.instructions as step}",
+    		source: "(229:8) {#each recipe.instructions as step}",
     		ctx
     	});
 
@@ -1161,7 +1197,7 @@ var app = (function () {
     	let disabled;
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('App', slots, []);
-    	let page = "home", title = "Recipies";
+    	let page = "home", title = "Recipes", shortUrl = null;
     	let inputVal = "", img;
     	let recipe = {};
 
@@ -1174,6 +1210,14 @@ var app = (function () {
     			await new Promise(r => setTimeout(r, 10));
     			console.log("Pasted");
     			load(null, null, true);
+    		};
+
+    		window.onbeforeprint = async () => {
+    			if (!recipe.sourceUrl || shortUrl) {
+    				return;
+    			}
+
+    			$$invalidate(3, shortUrl = await fetch(`https://cors.explosionscratc.repl.co/is.gd/create.php?format=simple&url=${encodeURIComponent(recipe.sourceUrl)}`).then(r => r.text()));
     		};
     	});
 
@@ -1189,7 +1233,15 @@ var app = (function () {
     		}
 
     		$$invalidate(1, page = "loading");
-    		$$invalidate(4, recipe = await fetch(`https://cors.explosionscratc.repl.co/www.justtherecipe.com/extractRecipeAtUrl?url=${encodeURIComponent(url || inputVal)}`).then(r => r.json()));
+    		let res = await fetch(`https://cors.explosionscratc.repl.co/www.justtherecipe.com/extractRecipeAtUrl?url=${encodeURIComponent(url || inputVal)}`);
+
+    		if (!res.ok) {
+    			prompt("There was an error", await res.text() || res.status);
+    			$$invalidate(1, page = "home");
+    			return;
+    		}
+
+    		$$invalidate(5, recipe = await res.json());
     		history.pushState({}, title, `${location.pathname || ""}?url=${url || inputVal}`);
     		$$invalidate(2, title = recipe.name);
     		$$invalidate(1, page = "recipe");
@@ -1212,16 +1264,17 @@ var app = (function () {
     	function img_1_binding($$value) {
     		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
     			img = $$value;
-    			$$invalidate(3, img);
+    			$$invalidate(4, img);
     		});
     	}
 
-    	const error_handler = () => $$invalidate(3, img.src = `https://cors.explosionscratc.repl.co/${img.src.split("//")[1]}`, img);
+    	const error_handler = () => $$invalidate(4, img.src = `https://cors.explosionscratc.repl.co/${img.src.split("//")[1]}`, img);
 
     	$$self.$capture_state = () => ({
     		onMount,
     		page,
     		title,
+    		shortUrl,
     		inputVal,
     		img,
     		recipe,
@@ -1232,10 +1285,11 @@ var app = (function () {
     	$$self.$inject_state = $$props => {
     		if ('page' in $$props) $$invalidate(1, page = $$props.page);
     		if ('title' in $$props) $$invalidate(2, title = $$props.title);
+    		if ('shortUrl' in $$props) $$invalidate(3, shortUrl = $$props.shortUrl);
     		if ('inputVal' in $$props) $$invalidate(0, inputVal = $$props.inputVal);
-    		if ('img' in $$props) $$invalidate(3, img = $$props.img);
-    		if ('recipe' in $$props) $$invalidate(4, recipe = $$props.recipe);
-    		if ('disabled' in $$props) $$invalidate(5, disabled = $$props.disabled);
+    		if ('img' in $$props) $$invalidate(4, img = $$props.img);
+    		if ('recipe' in $$props) $$invalidate(5, recipe = $$props.recipe);
+    		if ('disabled' in $$props) $$invalidate(6, disabled = $$props.disabled);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -1244,7 +1298,7 @@ var app = (function () {
 
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty & /*inputVal*/ 1) {
-    			$$invalidate(5, disabled = !inputVal.match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/));
+    			$$invalidate(6, disabled = !inputVal.match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/));
     		}
     	};
 
@@ -1252,6 +1306,7 @@ var app = (function () {
     		inputVal,
     		page,
     		title,
+    		shortUrl,
     		img,
     		recipe,
     		disabled,

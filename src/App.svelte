@@ -2,7 +2,8 @@
   import { onMount } from "svelte";
 
   let page = "home",
-    title = "Recipes";
+    title = "Recipes",
+    shortUrl = null;
   let inputVal = "",
     img;
   let recipe = {};
@@ -19,6 +20,16 @@
       console.log("Pasted");
       load(null, null, true);
     };
+    window.onbeforeprint = async () => {
+      if (!recipe.sourceUrl || shortUrl) {
+        return;
+      }
+      shortUrl = await fetch(
+        `https://cors.explosionscratc.repl.co/is.gd/create.php?format=simple&url=${encodeURIComponent(
+          recipe.sourceUrl
+        )}`
+      ).then((r) => r.text());
+    };
   });
   async function load(_, url, bypass = false) {
     console.log("Loading recipe");
@@ -33,7 +44,7 @@
       return alert("Invalid URL");
     }
     page = "loading";
-    res = await fetch(
+    let res = await fetch(
       `https://cors.explosionscratc.repl.co/www.justtherecipe.com/extractRecipeAtUrl?url=${encodeURIComponent(
         url || inputVal
       )}`
@@ -56,7 +67,6 @@
 
 <svelte:head>
   <title>{title}</title>
-  <base href="https://explosion-scratch.github.io/recipes" />
 </svelte:head>
 {#if page === "home"}
   <input
@@ -152,6 +162,16 @@
     </div>
     <div class="column recipeColumn">
       <h2 class="title"><a href={recipe.sourceUrl}>{recipe.name}</a></h2>
+      <div id="url">
+        Saved from <span id="url_link"
+          >{shortUrl || recipe.sourceUrl.split("//")[1]}</span
+        >
+        • {new Date().toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        })}
+      </div>
       <div id="details">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -275,6 +295,7 @@
         padding: 0.4rem;
         border-bottom: 1px solid #0001;
         margin: 0;
+        color: #444;
         &:hover {
           border-bottom: 1px solid transparent;
           cursor: pointer;
@@ -334,13 +355,18 @@
     border-bottom: 2px dashed fade(@color, 30%);
     margin: 0;
   }
-
+  #url {
+    display: none;
+  }
   @media print {
     * {
       box-shadow: none !important;
     }
     #home {
-      display: none;
+      display: none !important;
+    }
+    #url {
+      display: block !important;
     }
   }
   .loader {
@@ -435,5 +461,15 @@
       width: 20px;
       height: 20px;
     }
+  }
+  #url {
+    color: #666;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+  #url_link {
+    color: #055;
+    border-bottom: 2px dashed #0bb;
+    background: #0bb2;
   }
 </style>
