@@ -430,7 +430,7 @@ var app = (function () {
     		c: function create() {
     			span = element("span");
     			attr_dev(span, "class", "loader svelte-6su8dw");
-    			add_location(span, file, 275, 2, 9756);
+    			add_location(span, file, 275, 2, 9777);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -625,7 +625,7 @@ var app = (function () {
     			attr_dev(path3, "fill", "currentColor");
     			attr_dev(path3, "d", "M78 72V32a6 6 0 0 1 12 0v40a6 6 0 0 1-12 0Zm39.9-41a6 6 0 0 0-11.8 2l7.9 47.5a30 30 0 0 1-60 0L61.9 33a6 6 0 1 0-11.8-2l-8 48a3.4 3.4 0 0 0-.1 1a42.2 42.2 0 0 0 36 41.6V224a6 6 0 0 0 12 0V121.6A42.2 42.2 0 0 0 126 80a3.4 3.4 0 0 0-.1-1Zm92.1 1v192a6 6 0 0 1-12 0v-58h-50a6.1 6.1 0 0 1-4.5-2a6.4 6.4 0 0 1-1.5-4.6a412.4 412.4 0 0 1 11.7-59c11.9-41.8 28.1-66.7 48.2-74A6 6 0 0 1 210 32Zm-12 10.1c-25.7 19.4-39.1 81.1-43.2 111.9H198Z");
     			attr_dev(path3, "class", "svelte-6su8dw");
-    			add_location(path3, file, 185, 11, 5780);
+    			add_location(path3, file, 185, 11, 5801);
     			attr_dev(svg1, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg1, "xmlns:xlink", "http://www.w3.org/1999/xlink");
     			attr_dev(svg1, "aria-hidden", "true");
@@ -635,29 +635,29 @@ var app = (function () {
     			attr_dev(svg1, "height", "32");
     			attr_dev(svg1, "preserveAspectRatio", "xMidYMid meet");
     			attr_dev(svg1, "viewBox", "0 0 256 256");
-    			add_location(svg1, file, 175, 8, 5457);
+    			add_location(svg1, file, 175, 8, 5478);
     			attr_dev(h20, "class", "ingredientsHeader svelte-6su8dw");
-    			add_location(h20, file, 174, 6, 5418);
+    			add_location(h20, file, 174, 6, 5439);
     			attr_dev(ul, "id", "ingredients");
     			attr_dev(ul, "class", "svelte-6su8dw");
-    			add_location(ul, file, 192, 6, 6331);
+    			add_location(ul, file, 192, 6, 6352);
     			attr_dev(div1, "class", "column imageColumn svelte-6su8dw");
     			add_location(div1, file, 139, 4, 3999);
     			attr_dev(a, "href", a_href_value = /*recipe*/ ctx[5].sourceUrl);
     			attr_dev(a, "class", "svelte-6su8dw");
-    			add_location(a, file, 201, 24, 6583);
+    			add_location(a, file, 201, 24, 6604);
     			attr_dev(h21, "class", "title svelte-6su8dw");
-    			add_location(h21, file, 201, 6, 6565);
+    			add_location(h21, file, 201, 6, 6586);
     			attr_dev(span, "id", "url_link");
     			attr_dev(span, "class", "svelte-6su8dw");
-    			add_location(span, file, 203, 19, 6673);
+    			add_location(span, file, 203, 19, 6694);
     			attr_dev(div2, "id", "url");
     			attr_dev(div2, "class", "svelte-6su8dw");
-    			add_location(div2, file, 202, 6, 6639);
+    			add_location(div2, file, 202, 6, 6660);
     			attr_dev(path4, "fill", "currentColor");
     			attr_dev(path4, "d", "M237.6 78.9a13.9 13.9 0 0 0-3.7-18.9a181.9 181.9 0 0 0-211.8 0a13.9 13.9 0 0 0-3.7 18.9l97.8 153.7a14 14 0 0 0 23.6 0l58.4-91.8h.1ZM29.1 69.7a170.1 170.1 0 0 1 197.8 0a2.1 2.1 0 0 1 .6 2.8l-9.8 15.3a149.9 149.9 0 0 0-179.4 0l-9.8-15.3a2.1 2.1 0 0 1 .6-2.8Zm35.6 59.7a22 22 0 1 1 20.7 32.5Zm65 96.8a2.1 2.1 0 0 1-3.4 0l-33.9-53.3a34 34 0 1 0-34.7-54.5L44.7 98a137.9 137.9 0 0 1 166.6 0l-19.4 30.4a34 34 0 1 0-36.5 57.3Zm32.2-50.7A22 22 0 0 1 172 134a21.5 21.5 0 0 1 13.4 4.6Z");
     			attr_dev(path4, "class", "svelte-6su8dw");
-    			add_location(path4, file, 223, 11, 7277);
+    			add_location(path4, file, 223, 11, 7298);
     			attr_dev(svg2, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg2, "xmlns:xlink", "http://www.w3.org/1999/xlink");
     			attr_dev(svg2, "aria-hidden", "true");
@@ -667,11 +667,11 @@ var app = (function () {
     			attr_dev(svg2, "height", "32");
     			attr_dev(svg2, "preserveAspectRatio", "xMidYMid meet");
     			attr_dev(svg2, "viewBox", "0 0 256 256");
-    			add_location(svg2, file, 213, 8, 6954);
+    			add_location(svg2, file, 213, 8, 6975);
     			attr_dev(path5, "fill", "currentColor");
     			attr_dev(path5, "d", "M128 230a102 102 0 1 1 102-102a102.2 102.2 0 0 1-102 102Zm0-192a90 90 0 1 0 90 90a90.1 90.1 0 0 0-90-90Zm62 90a6 6 0 0 0-6-6h-50V72a6 6 0 0 0-12 0v56a6 6 0 0 0 6 6h56a6 6 0 0 0 6-6Z");
     			attr_dev(path5, "class", "svelte-6su8dw");
-    			add_location(path5, file, 239, 11, 8202);
+    			add_location(path5, file, 239, 11, 8223);
     			attr_dev(svg3, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg3, "xmlns:xlink", "http://www.w3.org/1999/xlink");
     			attr_dev(svg3, "aria-hidden", "true");
@@ -681,14 +681,14 @@ var app = (function () {
     			attr_dev(svg3, "height", "32");
     			attr_dev(svg3, "preserveAspectRatio", "xMidYMid meet");
     			attr_dev(svg3, "viewBox", "0 0 256 256");
-    			add_location(svg3, file, 229, 8, 7879);
+    			add_location(svg3, file, 229, 8, 7900);
     			attr_dev(div3, "id", "details");
     			attr_dev(div3, "class", "svelte-6su8dw");
-    			add_location(div3, file, 212, 6, 6927);
+    			add_location(div3, file, 212, 6, 6948);
     			attr_dev(path6, "fill", "currentColor");
     			attr_dev(path6, "d", "M222 128a6 6 0 0 1-6 6h-88a6 6 0 0 1 0-12h88a6 6 0 0 1 6 6Zm-94-58h88a6 6 0 0 0 0-12h-88a6 6 0 0 0 0 12Zm88 116h-88a6 6 0 0 0 0 12h88a6 6 0 0 0 0-12ZM87.9 43.6L57.3 71.8L44.1 59.6a6 6 0 0 0-8.2 8.8l17.4 16a5.7 5.7 0 0 0 4 1.6a5.7 5.7 0 0 0 4.1-1.6l34.7-32a6 6 0 1 0-8.2-8.8Zm0 64l-30.6 28.2l-13.2-12.2a6 6 0 0 0-8.2 8.8l17.4 16a5.7 5.7 0 0 0 4 1.6a5.7 5.7 0 0 0 4.1-1.6l34.7-32a6 6 0 1 0-8.2-8.8Zm0 64l-30.6 28.2l-13.2-12.2a6 6 0 0 0-8.2 8.8l17.4 16a5.7 5.7 0 0 0 4 1.6a5.7 5.7 0 0 0 4.1-1.6l34.7-32a6 6 0 1 0-8.2-8.8Z");
     			attr_dev(path6, "class", "svelte-6su8dw");
-    			add_location(path6, file, 258, 11, 8886);
+    			add_location(path6, file, 258, 11, 8907);
     			attr_dev(svg4, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg4, "xmlns:xlink", "http://www.w3.org/1999/xlink");
     			attr_dev(svg4, "aria-hidden", "true");
@@ -698,14 +698,14 @@ var app = (function () {
     			attr_dev(svg4, "height", "32");
     			attr_dev(svg4, "preserveAspectRatio", "xMidYMid meet");
     			attr_dev(svg4, "viewBox", "0 0 256 256");
-    			add_location(svg4, file, 248, 8, 8563);
+    			add_location(svg4, file, 248, 8, 8584);
     			attr_dev(h22, "class", "recipe svelte-6su8dw");
-    			add_location(h22, file, 247, 6, 8535);
+    			add_location(h22, file, 247, 6, 8556);
     			attr_dev(ol, "id", "steps");
     			attr_dev(ol, "class", "svelte-6su8dw");
-    			add_location(ol, file, 265, 6, 9519);
+    			add_location(ol, file, 265, 6, 9540);
     			attr_dev(div4, "class", "column recipeColumn svelte-6su8dw");
-    			add_location(div4, file, 200, 4, 6525);
+    			add_location(div4, file, 200, 4, 6546);
     			attr_dev(div5, "class", "container svelte-6su8dw");
     			add_location(div5, file, 111, 2, 3041);
     		},
@@ -949,11 +949,11 @@ var app = (function () {
     			attr_dev(path0, "d", "M40 176V48a8 8 0 0 1 8-8h160a8 8 0 0 1 8 8v112l-42.3-42.3a8 8 0 0 0-11.4 0l-44.6 44.6a8 8 0 0 1-11.4 0l-20.6-20.6a8 8 0 0 0-11.4 0Z");
     			attr_dev(path0, "opacity", ".2");
     			attr_dev(path0, "class", "svelte-6su8dw");
-    			add_location(path0, file, 164, 11, 4780);
+    			add_location(path0, file, 164, 11, 4801);
     			attr_dev(path1, "fill", "currentColor");
     			attr_dev(path1, "d", "M88 92a12 12 0 1 1 12 12a12 12 0 0 1-12-12Zm136-44v160a16 16 0 0 1-16 16H48a16 16 0 0 1-16-16V48a16 16 0 0 1 16-16h160a16 16 0 0 1 16 16ZM48 156.7L68.7 136a16.1 16.1 0 0 1 22.6 0l20.7 20.7l44.7-44.7a16.1 16.1 0 0 1 22.6 0l28.7 28.7V48H48ZM208 208v-44.7l-40-40l-44.7 44.7a16.1 16.1 0 0 1-22.6 0L80 147.3l-32 32V208Z");
     			attr_dev(path1, "class", "svelte-6su8dw");
-    			add_location(path1, file, 168, 12, 5003);
+    			add_location(path1, file, 168, 12, 5024);
     			attr_dev(svg, "class", "noImage svelte-6su8dw");
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "xmlns:xlink", "http://www.w3.org/1999/xlink");
@@ -963,7 +963,7 @@ var app = (function () {
     			attr_dev(svg, "height", "32");
     			attr_dev(svg, "preserveAspectRatio", "xMidYMid meet");
     			attr_dev(svg, "viewBox", "0 0 256 256");
-    			add_location(svg, file, 154, 8, 4469);
+    			add_location(svg, file, 154, 8, 4490);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, svg, anchor);
@@ -1053,7 +1053,7 @@ var app = (function () {
     			t0 = text(t0_value);
     			t1 = space();
     			attr_dev(li, "class", "ingredient svelte-6su8dw");
-    			add_location(li, file, 194, 10, 6412);
+    			add_location(li, file, 194, 10, 6433);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -1093,7 +1093,7 @@ var app = (function () {
     			t0 = text(t0_value);
     			t1 = space();
     			attr_dev(li, "class", li_class_value = "" + (null_to_empty(/*step*/ ctx[15].isOptional ? "optional" : "") + " svelte-6su8dw"));
-    			add_location(li, file, 267, 10, 9589);
+    			add_location(li, file, 267, 10, 9610);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -1307,7 +1307,7 @@ var app = (function () {
     	}
 
     	const error_handler = () => img.src.includes("cors.explosionscratc")
-    	? ""
+    	? $$invalidate(5, recipe.imageUrls = [], recipe)
     	: $$invalidate(4, img.src = `https://cors.explosionscratc.repl.co/${img.src.split("//")[1]}`, img);
 
     	$$self.$capture_state = () => ({

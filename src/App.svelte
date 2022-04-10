@@ -146,7 +146,7 @@
           bind:this={img}
           on:error={() =>
             img.src.includes("cors.explosionscratc")
-              ? ""
+              ? (recipe.imageUrls = [])
               : (img.src = `https://cors.explosionscratc.repl.co/${
                   img.src.split("//")[1]
                 }`)}
