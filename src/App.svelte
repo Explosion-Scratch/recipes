@@ -142,9 +142,11 @@
           src={recipe.imageUrls[0]}
           bind:this={img}
           on:error={() =>
-            (img.src = `https://cors.explosionscratc.repl.co/${
-              img.src.split("//")[1]
-            }`)}
+            img.src.includes("cors.explosionscratc")
+              ? ""
+              : (img.src = `https://cors.explosionscratc.repl.co/${
+                  img.src.split("//")[1]
+                }`)}
         />
       {:else}
         <svg
