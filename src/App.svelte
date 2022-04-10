@@ -5,12 +5,31 @@
     title = "Recipes",
     shortUrl = null;
   let inputVal = "",
+    printing = false,
     img;
   let recipe = {};
-
   $: disabled = !inputVal.match(
     /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
   );
+  $: (async () => {
+    if (printing) {
+      return;
+    }
+    console.log({ disabled, printing, shortUrl, recipe, title, inputVal });
+    if (!shortUrl && !recipe.sourceUrl) {
+      console.log("Resetting history");
+      return history.pushState({}, title, "/");
+    }
+    history.pushState(
+      {},
+      title,
+      `${location.pathname || ""}?url=${
+        shortUrl?.split("//")?.[1]?.split("/")?.[1] ||
+        recipe?.sourceUrl ||
+        inputVal
+      }`
+    );
+  })();
   onMount(() => {
     if (new URLSearchParams(location.search).get("url")) {
       load(null, new URLSearchParams(location.search).get("url"), true);
@@ -20,8 +39,14 @@
       console.log("Pasted");
       load(null, null, true);
     };
+    window.onafterprint = () => (printing = false);
     window.onbeforeprint = async () => {
-      if (!recipe.sourceUrl || shortUrl) {
+      printing = true;
+      if (
+        !recipe.sourceUrl ||
+        shortUrl ||
+        recipe.sourceUrl.includes("//is.gd")
+      ) {
         return;
       }
       shortUrl = await fetch(
@@ -29,6 +54,9 @@
           recipe.sourceUrl
         )}`
       ).then((r) => r.text());
+      if (!shortUrl.startsWith("http")) {
+        return (shortUrl = null);
+      }
     };
   });
   async function load(_, url, bypass = false) {
@@ -41,7 +69,12 @@
         /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
       )
     ) {
-      return alert("Invalid URL");
+      if (!url && inputVal) {
+        return alert("Invalid URL");
+      } else {
+        url = `https://is.gd/${encodeURIComponent(url)}`;
+        shortUrl = url;
+      }
     }
     page = "loading";
     let res = await fetch(
@@ -55,11 +88,6 @@
       return;
     }
     recipe = await res.json();
-    history.pushState(
-      {},
-      title,
-      `${location.pathname || ""}?url=${url || inputVal}`
-    );
     title = recipe.name;
     page = "recipe";
   }
@@ -79,7 +107,12 @@
   <button on:click={load} {disabled}>Go</button>
 {:else if page === "recipe"}
   <div class="container">
-    <div id="home" on:click={() => (page = "home")}>
+    <div
+      id="home"
+      on:click={() => (
+        (page = "home"), (shortUrl = null), (recipe = {}), (disabled = true)
+      )}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -469,7 +502,7 @@
   }
   #url_link {
     color: #055;
-    border-bottom: 2px dashed #0bb;
-    background: #0bb2;
+    border-bottom: 2px dashed #066;
+    background: #0661;
   }
 </style>
