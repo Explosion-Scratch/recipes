@@ -50,7 +50,7 @@
 
 <svelte:head>
   <title>{title}</title>
-  <base href="https://explosion-scratch.github.io/recipies" />
+  <base href="https://explosion-scratch.github.io/recipes" />
 </svelte:head>
 {#if page === "home"}
   <input
