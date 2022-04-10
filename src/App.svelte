@@ -33,11 +33,17 @@
       return alert("Invalid URL");
     }
     page = "loading";
-    recipe = await fetch(
+    res = await fetch(
       `https://cors.explosionscratc.repl.co/www.justtherecipe.com/extractRecipeAtUrl?url=${encodeURIComponent(
         url || inputVal
       )}`
-    ).then((r) => r.json());
+    );
+    if (!res.ok) {
+      prompt("There was an error", (await res.text()) || res.status);
+      page = "home";
+      return;
+    }
+    recipe = await res.json();
     history.pushState(
       {},
       title,
