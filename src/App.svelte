@@ -49,7 +49,7 @@
     console.log({ disabled, printing, shortUrl, recipe, title, inputVal });
     if (!shortUrl && !recipe.sourceUrl) {
       console.log("Resetting history");
-      return history.pushState({}, title, "/");
+      return history.pushState({}, title, `${location.pathname}`);
     }
     history.pushState(
       {},
