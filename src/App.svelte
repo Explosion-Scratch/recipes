@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
 
   let page = "home",
-    title = "Recipies";
+    title = "Recipes";
   let inputVal = "",
     img;
   let recipe = {};
